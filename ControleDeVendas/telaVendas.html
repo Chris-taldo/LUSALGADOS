@@ -323,35 +323,36 @@
                 });
                 });
             </script>
-<script> // Button Adicionar + Form de adição
-    var modal = document.getElementById("myModal");
     
-    var btn = document.getElementById("myBtn");
     
-    var span = document.getElementsByClassName("close")[0];
     
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
+        <script> // Button Adicionar + Form de adição
+             var modal = document.getElementById("myModal");
+             var btn = document.getElementById("myBtn"); 
+               var span = document.getElementsByClassName("close")[0];
     
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
+              btn.onclick = function() {
+              modal.style.display = "block";
+             }
     
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+              span.onclick = function() {
+              modal.style.display = "none";
+              }
     
-    function saveData() {
-      var fid = document.getElementById("fid").value;
-      var produtovendido = document.getElementById("produtovendido").value;
-      var data = document.getElementById("data").value;
-      var valor = document.getElementById("valor").value;
+              window.onclick = function(event) {
+              if (event.target == modal) {
+                 modal.style.display = "none";
+                }
+                }
+    
+                    function saveData() {
+                    var fid = document.getElementById("fid").value;
+                    var produtovendido = document.getElementById("produtovendido").value;
+                    var data = document.getElementById("data").value;
+                 var valor = document.getElementById("valor").value;
     
       var table = document.getElementById("productTable");
-      var row = table.insertRow(-1);
+                    var row = table.insertRow(-1);
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
