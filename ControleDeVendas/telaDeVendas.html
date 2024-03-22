@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./components/design/css/design.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+            
+        <title>Vendas</title>
+    </head>
+
+    <body>
+
+        <div class="navigation">
+
+            <ul class="sidebar">
+                <img id="imge" src="./components/img/LOGO.png" alt="logoLu"
+                    width="200" height="120">
+
+                <li class="list active">
+                    <a href="./telaDeVendas.html">
+                        <span class="tittle"> Vendas </span>
+                        <span class="icon"> <i id="aleat"
+                                class="fa-solid fa-cash-register"></i></ion-icon></span>
+                </a>
+            </li>
+            <li class="list active">
+                <a href="/Clientes/clientes.html">
+                    <span class="tittle"> Clientes </span>
+                    <span class="icon"><i id="aleat"
+                            class="fa-solid fa-user-group"></i> </span>
+                </a>
+            </li>
+            <li class="list active">
+                <a href="/Produtos/produtos.html">
+
+                    <span class="tittle"> Produtos </span>
+                    <span class="icon"><i id="aleat"
+                            class="fa-solid fa-cart-shopping"></i> </span>
+                </a>
+            </li>
+            <li class="list active">
+                <a href="/TelaDeLogin/telainicial.html">
+
+                    <span class="tittle"> Sair </span>
+                    <span class="icon"><i
+                            class="fa-solid fa-right-from-bracket"></i> </span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- FIM DO MENU PRINCIPAL-->
+
+    <div class="table">
+        <div class="table_header">
+            <h2> Controle de Vendas </h2>
+            <h4> Lu Salgados</h4>
+
+            <div id="divBot">
+
+                <button id="myBtn" class="button">Adicionar</button>
+    
+                <div id="myModal" class="modal">
+                
+                  <div class="modal-content">
+                     <span class="close" id="closedd">&times;</span> 
+                    <form id="myForm">
+                        <label for="fid">ID:</label> <br>
+                        <input type="text" id="fid" name="fid"><br>
+                        <label for="produtovendido">Produto Vendido:</label><br>
+                        <input type="text" id="produtovendido" name="produtovendido"><br>
+                        <label for="data">Data:</label><br>
+                        <input type="text" id="data" name="data"><br>
+                        <label for="valor">Valor:</label><br>
+                        <input type="text" id="valor" name="valor"><br>
+                        <button type="button" id="btn00" onclick="saveData()">Salvar</button>
+                    </form>
+                  </div>
+                </div>
+                <button class="button"   type="text" ><i class="fa-solid fa-filter"></i>
+                    Filtrar</button>
+            </div>
+            <div id="divBusca">
+                <input type="text" id="txtBusca" name="search" placeholder="Buscar...">
+                <button type="button" onkeyup="myFunction()" id="btnBusca"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div >
+        </div>
+
+        <div class="table_section" id="selecao">         
+            <table id="productTable" >
+                <thead>
+                    <tr>
+                        <th >ID</th>
+                        <th>Produto Vendido</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>100 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton" class="editButton"   > <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td >100 Salgados </td>
+                        <td>20/11/2023 </td>
+                        <td>8,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td >100 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>100 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>100 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>100 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>100 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>100 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>50 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>140 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>120 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>130 Salgados</td>
+                        <td>20/11/2023 </td>
+                        <td>48,00</td>
+                        <td>
+                            <button id="btn1" class="editButton"> <i
+                                    class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btn2" class="deleteButton"> <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+</div>
+        <script type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    
+            
+
+
+    </body>
+    <script> //Button Editar
+        // Seleciona todos os botões de edição do código:
+        let editButtons = document.querySelectorAll('.editButton');
+        
+        // Adiciona o evento de clique a cada botão do código:
+        editButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+        // Pega o TD anterior ao botão (o TD do produto no caso é o do valor do produto):
+            let productTd = this.parentElement.previousElementSibling;
+        
+            // Solicita um novo valor ao usuário do produto:
+            let newValue = prompt('Digite o novo valor para o produto');
+        
+            // Atualiza o valor do TD do produto:
+            productTd.textContent = newValue;
+          });
+        });
+        </script>
+        
+        <script> //Button Excluir
+           // Seleciona todos os botões de exclusão
+            let deleteButtons = document.querySelectorAll('.deleteButton');
+
+            // Adiciona um evento de clique a cada botão
+                deleteButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+             // Pega a linha (tr) que contém o botão clicado
+                let row = this.parentElement.parentElement;
+
+                // Confirmação de exclusão permanente
+                let confirmDelete = confirm("Tem certeza de que deseja excluir permanentemente este produto?");
+
+                // Se o usuário confirmar, remove a linha da tabela
+                if (confirmDelete) {
+                row.remove();
+                }
+                });
+                });
+            </script>
+<script> // Button Adicionar + Form de adição
+    var modal = document.getElementById("myModal");
+    
+    var btn = document.getElementById("myBtn");
+    
+    var span = document.getElementsByClassName("close")[0];
+    
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    
+    function saveData() {
+      var fid = document.getElementById("fid").value;
+      var produtovendido = document.getElementById("produtovendido").value;
+      var data = document.getElementById("data").value;
+      var valor = document.getElementById("valor").value;
+    
+      var table = document.getElementById("productTable");
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      cell1.innerHTML = fid;
+      cell2.innerHTML = produtovendido;
+      cell3.innerHTML = data;
+      cell4.innerHTML = valor;
+    
+      document.getElementById("myForm").reset();
+      modal.style.display = "none";
+    }
+    </script>
+
+        
+        
+        </html>
