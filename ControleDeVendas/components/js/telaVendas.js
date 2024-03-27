@@ -62,20 +62,6 @@ function cancelarModal() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Button Editar
         // Seleciona todos os botões de edição do código:
         let editButtons = document.querySelectorAll('.editButton');
