@@ -56,47 +56,93 @@ function cancelarModal() {
     document.body.style.overflow = "visible";
     console.log("salve")
 }
+// ----------- FIM VALIDAÇÕES MENU MODAL------------------- 
+
+
+
+//Validação para o botão Excluir
+
+let deleteButtons = document.querySelectorAll('.deleteButton');
+deleteButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+
+        let row = this.parentElement.parentElement;
+        let confirmDelete = confirm("Tem certeza de que deseja excluir permanentemente este produto?");
+
+        if (confirmDelete) {
+            row.remove();
+        }
+
+    });
+});
+// ----------- FIM ------------------- 
 
 
 
 
 
+// PROCURAR POR ID
 
-//Button Editar
-        // Seleciona todos os botões de edição do código:
-        let editButtons = document.querySelectorAll('.editButton');
-        
-        // Adiciona o evento de clique a cada botão do código:
-        editButtons.forEach(function(button) {
-          button.addEventListener('click', function() {
-        // Pega o TD anterior ao botão (o TD do produto no caso é o do valor do produto):
-            let productTd = this.parentElement.previousElementSibling;
-        
-            // Solicita um novo valor ao usuário do produto:
-            let newValue = prompt('Digite o novo valor para o produto');
-        
-            // Atualiza o valor do TD do produto:
-            productTd.textContent = newValue;
-          });
-        });
+//PRECISA FAZER UMA VALIDAÇÃO AINDA
 
-        
- //Button Excluir
-           // Seleciona todos os botões de exclusão
-            let deleteButtons = document.querySelectorAll('.deleteButton');
+// ----------- FIM ------------------- 
 
-            // Adiciona um evento de clique a cada botão
-                deleteButtons.forEach(function(button) {
-                button.addEventListener('click', function() {
-             // Pega a linha (tr) que contém o botão clicado
-                let row = this.parentElement.parentElement;
 
-                // Confirmação de exclusão permanente
-                let confirmDelete = confirm("Tem certeza de que deseja excluir permanentemente este produto?");
+// FUNÇÃO DE PESQUISAR ITENS NA BARRA DE PESQUISA
 
-                // Se o usuário confirmar, remove a linha da tabela
-                if (confirmDelete) {
-                row.remove();
+function searchTable() {
+    var input = document.getElementById('inputSearch').value.toUpperCase();
+    var table = document.getElementById('tabela-produtos');
+    var tr = table.getElementsByTagName('tr');
+
+    for (var i = 0; i < tr.length; i++) {
+        var td = tr[i].getElementsByTagName('td');
+        for (var j = 0; j < td.length; j++) {
+            if (td[j]) {
+                if (td[j].innerHTML.toUpperCase().indexOf(input) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                } else {
+                    tr[i].style.display = "none";
                 }
-                });
-                });
+            }
+        }
+    }
+}
+// ----------- FIM ------------------- 
+
+//FUNÇÃO BOTÃO FILTRAR
+
+function openFilterMenu() {
+    var menu = document.getElementById("filterMenu");
+    if (menu.style.display === "none") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+}
+
+function sortTable(column, ascending) {
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("tabela-produtos");
+    switching = true;
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[column];
+            y = rows[i + 1].getElementsByTagName("TD")[column];
+            if (ascending ? (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) : (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())) {
+                shouldSwitch = true;
+                break;
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+        }
+    }
+    openFilterMenu();
+}
+// ----------- FIM ------------------- 
