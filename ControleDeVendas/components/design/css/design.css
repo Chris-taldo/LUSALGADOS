@@ -46,6 +46,7 @@ nav .botao-abrir-active {
     left: 160px;
     top: 5px;
     border-radius: 100%;
+
 }
 
 nav .botao-abrir-active span {
@@ -79,6 +80,7 @@ nav .menu-lateral {
     height: 100%;
     background-color: #2a2b2e;
     box-shadow: 1px 1px 15px #00000083;
+    z-index: 1;
 } 
 
 .navigation ul {
@@ -349,14 +351,16 @@ main .buscar-vendas .adc span {
     padding: 6px;
     color: #ffffff;
 }
-
+.table_section{
+    transform: translateX(-8%);
+   
+}
 #tabela-produtos {
-    width: 920px;
+    width: 80%;
     border-collapse: collapse;
     box-shadow: 1px 1px 5px #0000001a;
     border-radius: 10px 10px 10px 10px;
-   
-    
+
 }
 
 thead th {
@@ -364,7 +368,7 @@ thead th {
     background-color: rgb(227, 222, 222);
     font-size: 15px;
     color: #070707;
-    
+    padding: 8px;
 }
 
 th, td {
