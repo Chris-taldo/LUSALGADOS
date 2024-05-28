@@ -1,0 +1,22 @@
+section{
+    display: flex;
+    justify-content: center;
+    margin-left: 400px;
+    
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px 35px 10px;
+    
+}
+
+.titulo h1{
+    color: #F49E13;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 999;
+    line-height: 40px;
+}   
